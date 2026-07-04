@@ -38,12 +38,15 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
+    flex: 1;
 }
 
 .content-wrapper {
@@ -594,6 +597,49 @@ body {
     transform: translateX(5px);
 }
 
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(15, 15, 30, 0.9) 100%);
+    border-top: 1px solid rgba(102, 126, 234, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 40px 20px;
+    margin-top: auto;
+    animation: slideUp 0.8s ease-out;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-content p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.footer-content p strong {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.footer-disclaimer {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    font-style: italic;
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
+    padding-top: 12px;
+    margin-top: 12px;
+}
+
 /* Animations */
 @keyframes slideDown {
     from {
@@ -607,6 +653,17 @@ body {
 }
 
 @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -650,6 +707,14 @@ body {
         font-size: 1rem;
         letter-spacing: 0.5px;
     }
+
+    .footer {
+        padding: 30px 20px;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -681,5 +746,13 @@ body {
     .input-group label,
     .option-group label {
         font-size: 1rem;
+    }
+
+    .footer {
+        padding: 20px 15px;
+    }
+
+    .footer-content p {
+        font-size: 0.85rem;
     }
 }
