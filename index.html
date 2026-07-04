@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <header class="header">
+                <h1>🔐 Password Strength Analyzer</h1>
+                <p>Create and analyze powerful passwords instantly</p>
+            </header>
+
+            <main class="main-content">
+                <!-- Password Input Section -->
+                <section class="input-section">
+                    <div class="input-group">
+                        <label for="passwordInput">Enter Password</label>
+                        <div class="password-input-wrapper">
+                            <input 
+                                type="password" 
+                                id="passwordInput" 
+                                class="password-input" 
+                                placeholder="Type your password here..."
+                                autocomplete="off"
+                            >
+                            <button class="toggle-password" id="togglePassword">👁️</button>
+                        </div>
+                    </div>
+
+                    <!-- Strength Indicator -->
+                    <div class="strength-section">
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strengthFill"></div>
+                        </div>
+                        <div class="strength-info">
+                            <span class="strength-label">Strength:</span>
+                            <span class="strength-text" id="strengthText">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Password Requirements Checklist -->
+                    <div class="requirements">
+                        <h3>Requirements</h3>
+                        <ul class="checklist">
+                            <li id="req-length" class="requirement">
+                                <span class="check-icon">✓</span>
+                                <span>At least 8 characters</span>
+                            </li>
+                            <li id="req-uppercase" class="requirement">
+                                <span class="check-icon">✓</span>
+                                <span>Uppercase letters (A-Z)</span>
+                            </li>
+                            <li id="req-lowercase" class="requirement">
+                                <span class="check-icon">✓</span>
+                                <span>Lowercase letters (a-z)</span>
+                            </li>
+                            <li id="req-numbers" class="requirement">
+                                <span class="check-icon">✓</span>
+                                <span>Numbers (0-9)</span>
+                            </li>
+                            <li id="req-special" class="requirement">
+                                <span class="check-icon">✓</span>
+                                <span>Special characters (!@#$%^&*)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Detailed Analysis -->
+                    <div class="analysis">
+                        <h3>Analysis</h3>
+                        <div class="analysis-grid">
+                            <div class="analysis-item">
+                                <span class="label">Length:</span>
+                                <span class="value" id="lengthValue">0</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="label">Estimated Time to Crack:</span>
+                                <span class="value" id="crackTime">-</span>
+                            </div>
+                            <div class="analysis-item">
+                                <span class="label">Entropy Score:</span>
+                                <span class="value" id="entropy">0 bits</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Password Generator Section -->
+                <section class="generator-section">
+                    <h2>Generate Strong Password</h2>
+                    
+                    <div class="generator-options">
+                        <div class="option-group">
+                            <label for="passwordLength">Password Length</label>
+                            <div class="length-input-wrapper">
+                                <input 
+                                    type="range" 
+                                    id="passwordLength" 
+                                    class="length-slider" 
+                                    min="8" 
+                                    max="32" 
+                                    value="16"
+                                >
+                                <span class="length-value" id="lengthValue2">16</span>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Character Types</label>
+                            <div class="checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="genUppercase" class="option-checkbox" checked>
+                                    <span>Uppercase (A-Z)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="genLowercase" class="option-checkbox" checked>
+                                    <span>Lowercase (a-z)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="genNumbers" class="option-checkbox" checked>
+                                    <span>Numbers (0-9)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="genSpecial" class="option-checkbox" checked>
+                                    <span>Special (!@#$%)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="generated-password-section">
+                        <div class="generated-password-display">
+                            <input 
+                                type="text" 
+                                id="generatedPassword" 
+                                class="generated-password" 
+                                readonly
+                                placeholder="Generated password will appear here"
+                            >
+                            <button class="copy-btn" id="copyBtn" title="Copy to clipboard">📋</button>
+                        </div>
+                        <button class="generate-btn" id="generateBtn">Generate Password</button>
+                    </div>
+                </section>
+
+                <!-- Tips Section -->
+                <section class="tips-section">
+                    <h2>💡 Password Tips</h2>
+                    <ul class="tips-list">
+                        <li>Use a mix of uppercase, lowercase, numbers, and special characters</li>
+                        <li>Make your password at least 12 characters long for better security</li>
+                        <li>Avoid using personal information like birthdays or names</li>
+                        <li>Don't use common words or sequential patterns</li>
+                        <li>Use a unique password for each important account</li>
+                        <li>Consider using a password manager to store your passwords securely</li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
