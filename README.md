@@ -2,6 +2,10 @@
 
 A modern, interactive web application for analyzing password strength and generating secure passwords. Built with a sleek dark theme and gradient UI for an exceptional user experience.
 
+## Preview
+
+You can preview the app here: https://ole1630.github.io/Password-Strength-Analyzer/
+
 ![Password Strength Analyzer](https://img.shields.io/badge/Version-1.0.0-blueviolet?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 ![Languages](https://img.shields.io/badge/HTML-CSS-JavaScript-blue?style=flat-square)
